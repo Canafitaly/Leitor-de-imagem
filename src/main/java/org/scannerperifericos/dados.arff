@@ -2,43 +2,33 @@
 
 @attribute largura numeric
 @attribute altura numeric
-
 @attribute blocoA_R numeric
 @attribute blocoA_G numeric
 @attribute blocoA_B numeric
-
 @attribute blocoB_R numeric
 @attribute blocoB_G numeric
 @attribute blocoB_B numeric
-
 @attribute blocoC_R numeric
 @attribute blocoC_G numeric
 @attribute blocoC_B numeric
-
 @attribute blocoD_R numeric
 @attribute blocoD_G numeric
 @attribute blocoD_B numeric
-
 @attribute blocoE_R numeric
 @attribute blocoE_G numeric
 @attribute blocoE_B numeric
-
 @attribute blocoF_R numeric
 @attribute blocoF_G numeric
 @attribute blocoF_B numeric
-
 @attribute blocoG_R numeric
 @attribute blocoG_G numeric
 @attribute blocoG_B numeric
-
 @attribute blocoH_R numeric
 @attribute blocoH_G numeric
 @attribute blocoH_B numeric
-
 @attribute blocoI_R numeric
 @attribute blocoI_G numeric
 @attribute blocoI_B numeric
-
 @attribute variacaoA numeric
 @attribute variacaoB numeric
 @attribute variacaoC numeric
@@ -48,10 +38,11 @@
 @attribute variacaoG numeric
 @attribute variacaoH numeric
 @attribute variacaoI numeric
-
-
 @attribute objeto {A,B,C,D,E,F,G,H,I}
 @attribute origem {A,B,C,D,E,F,G,H,I}
 @attribute destino {A,B,C,D,E,F,G,H,I}
 
 @data
+900,859,255.0,231.94460372960373,216.09433566433566,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,A,B,C
+900,859,255.0,255.0,255.0,239.7385780885781,235.9900233100233,233.4015034965035,255.0,255.0,255.0,255.0,255.0,255.0,228.76308857808857,222.31867132867134,217.86854312354313,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,61.96106060606061,55.86989510489511,0.0,0.0,96.04969696969695,0.0,0.0,0.0,0.0,A,B,C
+900,859,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,255.0,233.26832167832168,202.44538461538463,255.0,255.0,255.0,255.0,255.0,255.0,255.0,236.61493006993007,210.5386013986014,0.0,55.86989510489511,0.0,0.0,96.04969696969695,74.28629370629369,0.0,0.0,62.84646853146853,A,B,C
