@@ -52,7 +52,7 @@ public class Scanner0_1 {
             /*fim captura*/
 
 
-            /*preenche os as mediaRGB */
+            /*preenche as mediaRGB */
             int blocoIndex = 0;
             for (int by = 0; by < 3; by++) {//linhas da da matriz
                 for (int bx = 0; bx < 3; bx++) {//coluna da matriz
@@ -151,10 +151,5 @@ public class Scanner0_1 {
             System.out.println("Variação bloco " + (char)('A' + i) + ": " + variacao[i]);
         }
         /*fim apuração*/
-
-
     }
-
-
-
 }
