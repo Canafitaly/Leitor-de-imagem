@@ -50,7 +50,7 @@ public class Scanner {
 
         matriz=this.matriz*this.matriz;
         this.mediasRGB = new double[matriz][3];
-        this.mediasRGB_Anteriores=new double[matriz][3];
+
         this.variacao= new double[matriz];
 
         return img;
@@ -84,6 +84,7 @@ public class Scanner {
     }
 
     public void anterioresVazios(){
+        this.mediasRGB_Anteriores=new double[this.matriz*this.matriz][3];
         for (int i = 0; i < mediasRGB.length; i++) {
             for (int j = 0; j < mediasRGB[0].length; j++) {
                 mediasRGB_Anteriores[i][j] = mediasRGB[i][j];
