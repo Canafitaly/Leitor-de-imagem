@@ -1,4 +1,4 @@
-package org.scannerperifericos.mvc.models;
+package org.scannerperifericos.mvc.dataset;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -11,8 +11,8 @@ public class CriadorDeConteudo {
     private final Random random = new Random();
 
     private char posicaoAtual;
-    private char posicaoAnterior = 'A';
-
+    public static char[] tabelaDePossições=new char[2000];
+    private static int contagem=0;
     // Sorteia de A até I
     public void posicaoAleatoria() {
         posicaoAtual = (char) ('A' + random.nextInt(9));
@@ -39,7 +39,7 @@ public class CriadorDeConteudo {
         }
     }
 
-    public void novaImagem(String nomeArquivo) throws IOException {
+    public void novaImagem(String nomeArquivo, String pasta) throws IOException {
 
         BufferedImage img =
                 new BufferedImage(
@@ -68,14 +68,17 @@ public class CriadorDeConteudo {
         ImageIO.write(
                 img,
                 "png",
-                new File(nomeArquivo)
+                new File(pasta,nomeArquivo)
         );
 
+        tabelaDePossições[contagem] = posicaoAtual;
         System.out.println(
-                "Origem: " + posicaoAnterior +
-                        " | Destino: " + posicaoAtual
+                "Origem: " +tabelaDePossições[contagem] +
+                        " | Destino: " + posicaoAtual +
+                        " | Numero: "+ contagem
+
         );
 
-        posicaoAnterior = posicaoAtual;
+        contagem++;
     }
 }

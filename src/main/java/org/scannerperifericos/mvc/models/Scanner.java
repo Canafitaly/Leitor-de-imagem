@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Scanner {
     //var
     private double[][] mediasRGB = new double[9][3]; // 9 blocos, 3 canais
-    private double[][]  mediasRGB_Anteriores = new double[9][3];
+    private double[][]  mediasRGB_Anteriores = null;
     private double[] variacao =new double[9];
     private int largura;
     private int altura;
@@ -23,7 +23,7 @@ public class Scanner {
         escrivan.cabesalho();
 
         for (File imagem :imagens){
-
+            System.out.println(imagem.getName());
             preenchendoMediasRGB(definicaoDeMatriz(imagem,matriz));
 
             if(this.primeira_execulsao){
@@ -84,11 +84,14 @@ public class Scanner {
     }
 
     public void anterioresVazios(){
-        this.mediasRGB_Anteriores=new double[this.matriz*this.matriz][3];
-        for (int i = 0; i < mediasRGB.length; i++) {
-            for (int j = 0; j < mediasRGB[0].length; j++) {
-                mediasRGB_Anteriores[i][j] = mediasRGB[i][j];
+        if(mediasRGB_Anteriores==null) {
+            this.mediasRGB_Anteriores = new double[this.matriz * this.matriz][3];
+            for (int i = 0; i < mediasRGB.length; i++) {
+                for (int j = 0; j < mediasRGB[0].length; j++) {
+                    mediasRGB_Anteriores[i][j] = mediasRGB[i][j];
+                }
             }
+            System.out.println("Passamos aqui já");
         }
     }
 
@@ -97,7 +100,8 @@ public class Scanner {
             double deltaR = mediasRGB[i][0] - mediasRGB_Anteriores[i][0];
             double deltaG = mediasRGB[i][1] - mediasRGB_Anteriores[i][1];
             double deltaB = mediasRGB[i][2] - mediasRGB_Anteriores[i][2];
-            variacao[i] = Math.abs(deltaR) + Math.abs(deltaG) + Math.abs(deltaB);
+            //variacao[i] = Math.abs(deltaR) + Math.abs(deltaG) + Math.abs(deltaB);
+            variacao[i]=deltaR + deltaG + deltaB;
         }
     }
 

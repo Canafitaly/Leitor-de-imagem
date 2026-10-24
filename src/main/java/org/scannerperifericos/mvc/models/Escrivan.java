@@ -3,9 +3,12 @@ package org.scannerperifericos.mvc.models;
 import java.io.FileWriter;
 import java.io.IOException;
 
+
+import static org.scannerperifericos.mvc.dataset.CriadorDeConteudo.tabelaDePossições;
+
 public class Escrivan {
     String arquivo_arff="C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\WorkSpace\\ScannerPerifericos\\src\\main\\java\\org\\scannerperifericos\\dados.arff";
-
+    private static int contagem=0;
     public String getArquivo_arff() {
         return arquivo_arff;
     }
@@ -29,8 +32,7 @@ public class Escrivan {
                 fw.write("@attribute variacao" + bloco + " numeric\n");
             }
             fw.write("@attribute objeto {A,B,C,D,E,F,G,H,I}\n");
-            fw.write("@attribute origem {A,B,C,D,E,F,G,H,I}\n");
-            fw.write("@attribute destino {A,B,C,D,E,F,G,H,I}\n\n");
+            fw.write("@attribute origem {A,B,C,D,E,F,G,H,I}\n\n");
             fw.write("@data\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -52,7 +54,14 @@ public class Escrivan {
         }
 
         // valores nominais fictícios (pode ajustar depois)
-        linha.append(",A,B,C");
+
+            linha.append(",").append(tabelaDePossições[this.contagem]);
+            if (contagem==0){
+                linha.append(",").append("?");
+            }else{
+                linha.append(",").append(tabelaDePossições[this.contagem-1]);
+            }
+            this.contagem++;
 
         try (FileWriter fw = new FileWriter(arquivo_arff, true)) {
             fw.write(linha.toString() + "\n");
